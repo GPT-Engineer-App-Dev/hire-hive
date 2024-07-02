@@ -10,6 +10,7 @@ import Companies from "./pages/Companies.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
 import PostJob from "./pages/PostJob.jsx";
+import JobApplication from "./pages/JobApplication.jsx";
 
 const queryClient = new QueryClient();
 
@@ -60,6 +61,7 @@ const App = () => {
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
               <Route path="post-job" element={<PostJob />} />
+              <Route path="apply/:jobId" element={<JobApplication />} />
             </Route>
           </Routes>
         </Router>

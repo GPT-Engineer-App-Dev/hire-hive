@@ -1,7 +1,9 @@
 import { useQuery } from "@tanstack/react-query";
+import { useNavigate } from "react-router-dom";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Input } from "@/components/ui/input";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import { Button } from "@/components/ui/button";
 
 const fetchJobs = async () => {
   const response = await fetch("/api/jobs");
@@ -12,6 +14,7 @@ const fetchJobs = async () => {
 };
 
 const Jobs = () => {
+  const navigate = useNavigate();
   const { data: jobs, error, isLoading } = useQuery({
     queryKey: ["jobs"],
     queryFn: fetchJobs,
@@ -54,6 +57,7 @@ const Jobs = () => {
                   <p>{job.company}</p>
                   <p>{job.location}</p>
                   <p>{job.description}</p>
+                  <Button onClick={() => navigate(`/apply/${job.id}`)}>Apply</Button>
                 </CardContent>
               </Card>
             ))}
