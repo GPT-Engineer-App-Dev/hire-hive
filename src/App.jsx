@@ -9,6 +9,7 @@ import Jobs from "./pages/Jobs.jsx";
 import Companies from "./pages/Companies.jsx";
 import About from "./pages/About.jsx";
 import Contact from "./pages/Contact.jsx";
+import PostJob from "./pages/PostJob.jsx";
 
 const queryClient = new QueryClient();
 
@@ -38,6 +39,11 @@ export const navItems = [
     to: "/contact",
     icon: <Mail className="h-4 w-4" />,
   },
+  {
+    title: "Post Job",
+    to: "/post-job",
+    icon: <Briefcase className="h-4 w-4" />,
+  },
 ];
 
 const App = () => {
@@ -53,6 +59,7 @@ const App = () => {
               <Route path="companies" element={<Companies />} />
               <Route path="about" element={<About />} />
               <Route path="contact" element={<Contact />} />
+              <Route path="post-job" element={<PostJob />} />
             </Route>
           </Routes>
         </Router>
