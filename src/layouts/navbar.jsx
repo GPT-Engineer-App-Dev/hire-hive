@@ -9,9 +9,18 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { CircleUser, Menu, Package2 } from "lucide-react";
+import { CircleUser, Menu, Package2, Briefcase } from "lucide-react";
 import { NavLink, Outlet } from "react-router-dom";
-import { navItems } from "../App";
+import { navItems as existingNavItems } from "../App";
+
+const navItems = [
+  ...existingNavItems,
+  {
+    title: "Post Job",
+    to: "/post-job",
+    icon: <Briefcase className="h-4 w-4" />,
+  },
+];
 
 const Layout = () => {
   return (
